@@ -11,12 +11,12 @@ class DataSequence {
   }
 
   float next() {
-    if ( current + 1 >= values.length ) {
+    if ( current >= values.length ) {
       current = 0;
-    } else {
-      current++;
     }
-    return values[ current ];
+    float nextVal = values[ current ];
+    current++;
+    return nextVal;
   }
 
   float mapNext( float min, float max ) {
